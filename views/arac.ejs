@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Filocum</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Ubuntu" rel="stylesheet">
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+  <!-- Font Awesome -->
+  <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+  <!-- Bootstrap Scripts -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <section class="colored-section" id="titlearac">
+
+    <div class="container-fluid" id='containerarac'>
+
+      <!-- Nav Bar -->
+
+      <nav class="navbar navbar-expand-lg navbar-dark" id='navbararac'>
+
+        <a class="navbar-brand" href="">Filocum</a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#footer">İletişim</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#pricing">Hakkımızda</a>
+            </li>
+          </ul>
+
+        </div>
+      </nav>
+
+
+    </section>
+
+    <section class="white-section" id="pricing">
+<div class="container" style="max-width: 1540px">
+  <div class="row row-eq-height">
+
+        <div class="pricing-column h-100 d-inline-block col-lg-6 col-md-12">
+          <div class="card">
+            <div class="card-header">
+              <h3><%=JSON.stringify(Info[0].Marka).replace(/"/g, "") + " " + JSON.stringify(Info[0].Model).replace(/"|\t| /g, "")%></h3>
+            </div>
+            <div class="card-body">
+              <% var aracadı=JSON.stringify(Info[0].Model).replace(/"|\t| /g, "") %>
+              <% console.log(aracadı) %>
+              <img src="/images/<%=aracadı%>.png" class="img-fluid" id=tabloimg alt="Responsive image">
+              <p>
+              </p>
+              <p></p>
+            </div>
+          </div>
+        </div>
+        <table class="table table-bordered col-lg-6 col-md-12 text-center" id=tablo>
+            <tbody>
+              <tr>
+                <th scope="row">Marka</th>
+                <td><%=JSON.stringify(Info[0].Marka).replace(/"/g, "")%></td>
+              </tr>
+              <tr>
+                <th scope="row">Model</th>
+                <td><%=JSON.stringify(Info[0].Model).replace(/"/g, "")%></td>
+              </tr>
+              <tr>
+                <th scope="row">Yakıt Türü</th>
+                <td colspan="2"><%=JSON.stringify(Info[0].Yakıt_Türü).replace(/"/g, "")%></td>
+              </tr>
+              <tr>
+                <th scope="row">Vites Türü</th>
+                <td colspan="2"><%=JSON.stringify(Info[0].Vites_Türü).replace(/"/g, "")%></td>
+              </tr>
+              <tr>
+                <th scope="row">Kapasite</th>
+                <td colspan="2"><%=JSON.stringify(Info[0].Kapasite).replace(/"/g, "")%></td>
+              </tr>
+              <tr>
+                <th scope="row">Bagaj Litresi</th>
+                <td colspan="2"><%=JSON.stringify(Info[0].Bagaj_Litre).replace(/"/g, "")%></td>
+              </tr>
+              <tr>
+                <th scope="row">Kalan Adet</th>
+                <td colspan="2"><%=JSON.stringify(Info[0].Kalan_Adet).replace(/"/g, "")%></td>
+              </tr>
+            </tbody>
+          </table>
+              <button class="btn btn-lg btn-block btn-outline-dark" onclick="location.href='/Kirala/<%=JSON.stringify(Info[0].Model).replace(/"/g, "")%>'" type="button">Kirala</button>
+  </div>
+
+</div>
+
+
+    </section>
+    <!-- Call to Action -->
+
+    <!-- Footer -->
+
+    <footer class="white-section" id="footer">
+      <div class="container-fluid" style="text-align: center">
+        <i class="social-icon fab fa-facebook-f"></i>
+        <i class="social-icon fab fa-twitter"></i>
+        <i class="social-icon fab fa-instagram"></i>
+        <i class="social-icon fas fa-envelope"></i>
+        <p>© Copyright 2022 Filocum</p>
+      </div>
+    </footer>
+
+
+    </body>
+
+    </html>

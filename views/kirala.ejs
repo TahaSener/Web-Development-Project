@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Filocum</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Ubuntu" rel="stylesheet">
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/styles.css">
+
+  <!-- Font Awesome -->
+  <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+  <!-- Bootstrap Scripts -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      var d=new Date().toISOString();
+      var newdate=d.substr(0,10);
+        $("[name='bday']").attr('min',newdate);
+        console.log($("[name='bday']").attr("min"));
+    });
+
+    </script>
+    <section class="white-section" id="pricing" style="text-align:center">
+      <h2 class="section-heading">Sipariş Bilgileri</h2>
+          <form action="/kirala" method="post" style="padding-left:25%; padding-right:25%">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Araç Bilgileri</label>
+              <input type="text" name="Marka" value="<%=JSON.stringify(DataArac[0].Marka).replace(/"|\t| /g, "")%>" class="form-control" placeholder="<%=JSON.stringify(DataArac[0].Marka).replace(/"|\t| /g, "")%>" readonly>
+            <input type="text" name="Model" class="form-control" value="<%=JSON.stringify(DataArac[0].Model).replace(/"|\t| /g, "")%>" placeholder="<%=JSON.stringify(DataArac[0].Model).replace(/"|\t| /g, "")%>" readonly>
+            </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Araç Sayısı</label>
+                      <input name="Sayı" type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Yalnızca Sayı Girin">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Firma Bilgileri</label>
+                      <input name="Firma" type="text" class="form-control" value="<%=JSON.stringify(DataFirma[0].FİRMA_AD).replace(/"|\t| /g, "")%>" placeholder="<%=JSON.stringify(DataFirma[0].FİRMA_AD).replace(/"|\t| /g, "")%>" readonly>
+                    </div>
+                    <div class="form-group">
+                      <label>
+                      Bitiş Tarihini Seçiniz:
+                      <input type="date" name="bday" >
+                    </label>
+                    </div>
+
+
+                    <button type="submit" class="btn btn-primary">Kirala</button>
+        </form>
+        </section>
+
+
+
+
+    <!-- Footer -->
+
+    <footer class="white-section" id="footer" style="text-align:center; padding-top:10%">
+      <div class="container-fluid">
+        <i class="social-icon fab fa-facebook-f"></i>
+        <i class="social-icon fab fa-twitter"></i>
+        <i class="social-icon fab fa-instagram"></i>
+        <i class="social-icon fas fa-envelope"></i>
+        <p>© Copyright 2022 Filocum</p>
+      </div>
+    </footer>
+
+
+    </body>
+
+    </html>
